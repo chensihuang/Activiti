@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
+  <process id="qingjia" name="qingjia" isExecutable="true">
+    <startEvent id="startevent1" name="Start"></startEvent>
+    <endEvent id="endevent1" name="End"></endEvent>
+    <userTask id="请假申请" name="请假申请"></userTask>
+    <userTask id="部门经理审批" name="部门经理审批" activiti:assignee="范冰冰经纪人"></userTask>
+    <userTask id="总经理审批" name="总经理审批" activiti:assignee="啊啊啊"></userTask>
+    <sequenceFlow id="flow1" sourceRef="startevent1" targetRef="请假申请"></sequenceFlow>
+    <sequenceFlow id="flow2" sourceRef="请假申请" targetRef="部门经理审批"></sequenceFlow>
+    <sequenceFlow id="flow3" sourceRef="部门经理审批" targetRef="总经理审批"></sequenceFlow>
+    <sequenceFlow id="flow4" sourceRef="总经理审批" targetRef="endevent1"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_qingjia">
+    <bpmndi:BPMNPlane bpmnElement="qingjia" id="BPMNPlane_qingjia">
+      <bpmndi:BPMNShape bpmnElement="startevent1" id="BPMNShape_startevent1">
+        <omgdc:Bounds height="51.0" width="61.0" x="560.0" y="150.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endevent1" id="BPMNShape_endevent1">
+        <omgdc:Bounds height="51.0" width="61.0" x="560.0" y="720.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="请假申请" id="BPMNShape_请假申请">
+        <omgdc:Bounds height="71.0" width="201.0" x="490.0" y="250.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="部门经理审批" id="BPMNShape_部门经理审批">
+        <omgdc:Bounds height="81.0" width="201.0" x="490.0" y="430.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="总经理审批" id="BPMNShape_总经理审批">
+        <omgdc:Bounds height="81.0" width="201.0" x="490.0" y="580.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="flow1" id="BPMNEdge_flow1">
+        <omgdi:waypoint x="590.0" y="201.0"></omgdi:waypoint>
+        <omgdi:waypoint x="590.0" y="250.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow2" id="BPMNEdge_flow2">
+        <omgdi:waypoint x="590.0" y="321.0"></omgdi:waypoint>
+        <omgdi:waypoint x="590.0" y="430.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow3" id="BPMNEdge_flow3">
+        <omgdi:waypoint x="590.0" y="511.0"></omgdi:waypoint>
+        <omgdi:waypoint x="590.0" y="580.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow4" id="BPMNEdge_flow4">
+        <omgdi:waypoint x="590.0" y="661.0"></omgdi:waypoint>
+        <omgdi:waypoint x="590.0" y="720.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
